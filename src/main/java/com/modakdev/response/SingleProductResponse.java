@@ -6,11 +6,11 @@ import com.modakdev.model.values.InputType;
 import java.lang.reflect.Field;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ProductResponse extends MDBaseResponse {
+public class SingleProductResponse extends MDBaseResponse {
     ConcurrentHashMap<String, String> productResponse = new ConcurrentHashMap<>();
     Product product;
 
-    public ProductResponse() {
+    public SingleProductResponse() {
     }
 
     public Product getProduct() {

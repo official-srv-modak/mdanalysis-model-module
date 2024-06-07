@@ -1,7 +1,7 @@
 package com.modakdev;
 
 import com.modakdev.model.pojo.Product;
-import com.modakdev.response.ProductResponse;
+import com.modakdev.response.SingleProductResponse;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class Test {
         p.setEncodedColumns(new ArrayList<>());
         p.setCorrelationMatrix("ancoancan");
 
-        ProductResponse productResponse = new ProductResponse();
+        SingleProductResponse productResponse = new SingleProductResponse();
         productResponse.build(p);
 
         System.out.println(productResponse);
