@@ -10,8 +10,8 @@ public class Test {
         Product p = new Product();
         p.setName("Abc");
         p.setDescription("Something");
-        p.setPid(10);
-        p.setEncodedColumns(new ArrayList<>());
+        p.setId(10);
+        p.setEncodedColumns("aafsfaa");
         p.setCorrelationMatrix("ancoancan");
 
         SingleProductResponse productResponse = new SingleProductResponse();

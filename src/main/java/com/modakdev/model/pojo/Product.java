@@ -1,34 +1,36 @@
 package com.modakdev.model.pojo;
 
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Product {
-    int pid;
+    int id;
     String name;
     String description;
     String correlationMatrix;
-    ArrayList<String> encodedColumns;
-    ConcurrentHashMap<String, String> otherParams = new ConcurrentHashMap<>();
+    String encodedColumns;
+    String decisionColumn;
+    String testModelPath, trainModelPath;
 
-    public Product() {
-    }
 
-    public Product(int pid, String name, String description, String correlationMatrix, ArrayList<String> encodedColumns, ConcurrentHashMap<String, String> otherParams) {
-        this.pid = pid;
+    public Product(int id, String name, String description, String correlationMatrix, String encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.correlationMatrix = correlationMatrix;
         this.encodedColumns = encodedColumns;
-        this.otherParams = otherParams;
+        this.decisionColumn = decisionColumn;
+        this.testModelPath = testModelPath;
+        this.trainModelPath = trainModelPath;
     }
 
-    public int getPid() {
-        return pid;
+    public Product() {
     }
 
-    public void setPid(int pid) {
-        this.pid = pid;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -55,31 +57,46 @@ public class Product {
         this.correlationMatrix = correlationMatrix;
     }
 
-    public ArrayList<String> getEncodedColumns() {
+    public String getEncodedColumns() {
         return encodedColumns;
     }
 
-    public void setEncodedColumns(ArrayList<String> encodedColumns) {
+    public void setEncodedColumns(String encodedColumns) {
         this.encodedColumns = encodedColumns;
     }
 
-    public ConcurrentHashMap<String, String> getOtherParams() {
-        return otherParams;
+    public String getDecisionColumn() {
+        return decisionColumn;
     }
 
-    public void setOtherParams(ConcurrentHashMap<String, String> otherParams) {
-        this.otherParams = otherParams;
+    public void setDecisionColumn(String decisionColumn) {
+        this.decisionColumn = decisionColumn;
+    }
+
+    public String getTestModelPath() {
+        return testModelPath;
+    }
+
+    public void setTestModelPath(String testModelPath) {
+        this.testModelPath = testModelPath;
+    }
+
+    public String getTrainModelPath() {
+        return trainModelPath;
+    }
+
+    public void setTrainModelPath(String trainModelPath) {
+        this.trainModelPath = trainModelPath;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "pid=" + pid +
+                "pid=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", correlationMatrix='" + correlationMatrix + '\'' +
                 ", encodedColumns='" + encodedColumns + '\'' +
-                ", otherParams=" + otherParams +
                 '}';
     }
 }
