@@ -6,17 +6,22 @@ import java.util.UUID;
 
 public class MDBaseResponse {
 
-    protected final static String txnId = UUID.randomUUID().toString();
-    protected static String txnDate = String.valueOf(java.time.LocalDate.now());
-    protected static String txnTime = String.valueOf(java.time.LocalTime.now());
+    protected final String txnId;
+    protected String txnDate;
+    protected String txnTime;
     protected HttpStatus status;
     protected String message = "";
 
     public MDBaseResponse() {
-
+        this.txnId = UUID.randomUUID().toString();
+        this.txnDate = String.valueOf(java.time.LocalDate.now());
+        this.txnTime = String.valueOf(java.time.LocalTime.now());
     }
 
     public MDBaseResponse(HttpStatus status, String message) {
+        this.txnId = UUID.randomUUID().toString();;
+        this.txnDate = String.valueOf(java.time.LocalDate.now());
+        this.txnTime = String.valueOf(java.time.LocalTime.now());
         this.status = status;
         this.message = message;
     }
