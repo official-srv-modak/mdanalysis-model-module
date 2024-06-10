@@ -7,14 +7,24 @@ import java.lang.reflect.Field;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SingleProductResponse extends MDBaseResponse {
-    ConcurrentHashMap<String, String> productResponse = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, String> productResponse;
     Product product;
 
     public SingleProductResponse() {
+        productResponse = new ConcurrentHashMap<>();
     }
 
     public Product getProduct() {
+        productResponse = new ConcurrentHashMap<>();
         return product;
+    }
+
+    public ConcurrentHashMap<String, String> getProductResponse() {
+        return productResponse;
+    }
+
+    public void setProductResponse(ConcurrentHashMap<String, String> productResponse) {
+        this.productResponse = productResponse;
     }
 
     public void build(Product product) {

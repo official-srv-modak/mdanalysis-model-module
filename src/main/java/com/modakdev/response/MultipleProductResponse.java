@@ -8,15 +8,24 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class MultipleProductResponse extends MDBaseResponse{
-    ConcurrentHashMap<String, String> productResponse = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, String> productResponse;
     ArrayList<Product> products;
 
     public MultipleProductResponse() {
-
+        productResponse = new ConcurrentHashMap<>();
     }
 
     public ArrayList<Product> getProducts() {
+        productResponse = new ConcurrentHashMap<>();
         return products;
+    }
+
+    public ConcurrentHashMap<String, String> getProductResponse() {
+        return productResponse;
+    }
+
+    public void setProductResponse(ConcurrentHashMap<String, String> productResponse) {
+        this.productResponse = productResponse;
     }
 
     public void build(ArrayList<Product> products){
