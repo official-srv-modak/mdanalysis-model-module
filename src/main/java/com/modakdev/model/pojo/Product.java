@@ -1,17 +1,19 @@
 package com.modakdev.model.pojo;
 
 
+import java.util.List;
+
 public class Product {
     int id;
     String name;
     String description;
     String correlationMatrix;
-    String encodedColumns;
+    List<String> encodedColumns;
     String decisionColumn;
     String testModelPath, trainModelPath;
 
 
-    public Product(int id, String name, String description, String correlationMatrix, String encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
+    public Product(int id, String name, String description, String correlationMatrix, List<String> encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -57,11 +59,11 @@ public class Product {
         this.correlationMatrix = correlationMatrix;
     }
 
-    public String getEncodedColumns() {
+    public List<String> getEncodedColumns() {
         return encodedColumns;
     }
 
-    public void setEncodedColumns(String encodedColumns) {
+    public void setEncodedColumns(List<String> encodedColumns) {
         this.encodedColumns = encodedColumns;
     }
 

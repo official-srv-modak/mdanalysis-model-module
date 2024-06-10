@@ -14,4 +14,20 @@ public abstract class LibraryFunctions {
         }
         return jsonObject;
     }
+
+    public static String buildDescription(String name) {
+        String output = "";
+        StringBuilder sb = new StringBuilder(output);
+
+        for (int i = 0; i < name.toCharArray().length; i++) {
+            char ch = name.charAt(i);
+            if (ch == '_')
+                ch = ' ';
+            if(i==0)
+                ch = Character.toUpperCase(ch);
+            sb.append(ch);
+        }
+        output = sb.toString();
+        return output;
+    }
 }

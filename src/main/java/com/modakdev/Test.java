@@ -11,7 +11,7 @@ public class Test {
         p.setName("Abc");
         p.setDescription("Something");
         p.setId(10);
-        p.setEncodedColumns("aafsfaa");
+//        p.setEncodedColumns("aafsfaa");
         p.setCorrelationMatrix("ancoancan");
 
         SingleProductResponse productResponse = new SingleProductResponse();
