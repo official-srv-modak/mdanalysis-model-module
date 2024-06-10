@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import org.json.simple.JSONObject;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,5 +42,15 @@ public abstract class LibraryFunctions {
         List<String> columnList = gson.fromJson(jsonObject.get("encodedColumns").toString(), listType);
         jsonObject.remove("encodedColumns");
         jsonObject.put("encodedColumns", columnList);
+    }
+
+    public static Double getAccuracyPercentage(Double accuracy){
+        Double output;
+        DecimalFormat df = new DecimalFormat("##.##");
+        accuracy *= 100;
+        // Format the number using the DecimalFormat object
+        String formattedNumber = df.format(accuracy);
+        output = Double.parseDouble(formattedNumber);
+        return output;
     }
 }

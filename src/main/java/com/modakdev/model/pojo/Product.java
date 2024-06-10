@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Product {
     int id;
+    Double accuracy;
     String name;
     String description;
     String correlationMatrix;
@@ -12,9 +13,12 @@ public class Product {
     String decisionColumn;
     String testModelPath, trainModelPath;
 
+    public Product() {
+    }
 
-    public Product(int id, String name, String description, String correlationMatrix, List<String> encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
+    public Product(int id, Double accuracy, String name, String description, String correlationMatrix, List<String> encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
         this.id = id;
+        this.accuracy = accuracy;
         this.name = name;
         this.description = description;
         this.correlationMatrix = correlationMatrix;
@@ -24,15 +28,20 @@ public class Product {
         this.trainModelPath = trainModelPath;
     }
 
-    public Product() {
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Double getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(Double accuracy) {
+        this.accuracy = accuracy;
     }
 
     public String getName() {
@@ -94,11 +103,15 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "pid=" + id +
+                "id=" + id +
+                ", accuracy=" + accuracy +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", correlationMatrix='" + correlationMatrix + '\'' +
-                ", encodedColumns='" + encodedColumns + '\'' +
+                ", encodedColumns=" + encodedColumns +
+                ", decisionColumn='" + decisionColumn + '\'' +
+                ", testModelPath='" + testModelPath + '\'' +
+                ", trainModelPath='" + trainModelPath + '\'' +
                 '}';
     }
 }
