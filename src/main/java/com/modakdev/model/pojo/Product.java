@@ -12,11 +12,12 @@ public class Product {
     List<String> encodedColumns;
     String decisionColumn;
     String testModelPath, trainModelPath;
+    String imageUrl;
 
     public Product() {
     }
 
-    public Product(int id, Double accuracy, String name, String description, String correlationMatrix, List<String> encodedColumns, String decisionColumn, String testModelPath, String trainModelPath) {
+    public Product(int id, Double accuracy, String name, String description, String correlationMatrix, List<String> encodedColumns, String decisionColumn, String testModelPath, String trainModelPath, String imageUrl) {
         this.id = id;
         this.accuracy = accuracy;
         this.name = name;
@@ -26,6 +27,7 @@ public class Product {
         this.decisionColumn = decisionColumn;
         this.testModelPath = testModelPath;
         this.trainModelPath = trainModelPath;
+        this.imageUrl = imageUrl;
     }
 
     public int getId() {
@@ -100,6 +102,14 @@ public class Product {
         this.trainModelPath = trainModelPath;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -112,6 +122,7 @@ public class Product {
                 ", decisionColumn='" + decisionColumn + '\'' +
                 ", testModelPath='" + testModelPath + '\'' +
                 ", trainModelPath='" + trainModelPath + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }
