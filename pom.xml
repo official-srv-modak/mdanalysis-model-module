@@ -4,7 +4,7 @@
   <groupId>com.modakdev</groupId>
   <artifactId>mdanalysis-model-module</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>mdanalysis-model-module</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -30,5 +30,11 @@
       <artifactId>gson</artifactId>
       <version>2.11.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
+    </dependency>
+
   </dependencies>
 </project>

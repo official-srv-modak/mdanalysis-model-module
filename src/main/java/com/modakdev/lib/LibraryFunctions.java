@@ -1,8 +1,9 @@
 package com.modakdev.lib;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.text.DecimalFormat;
@@ -39,9 +40,24 @@ public abstract class LibraryFunctions {
     public static void fixLists(JSONObject jsonObject) {
         Gson gson = new Gson();
         Type listType = new TypeToken<List<String>>() {}.getType();
-        List<String> columnList = gson.fromJson(jsonObject.get("encodedColumns").toString(), listType);
-        jsonObject.remove("encodedColumns");
-        jsonObject.put("encodedColumns", columnList);
+
+        try {
+            // Extract encodedColumns as JSON array, convert to List<String> using Gson
+            List<String> columnList = gson.fromJson(jsonObject.getJSONArray("encodedColumns").toString(), listType);
+
+            // Remove the original encodedColumns key
+            jsonObject.remove("encodedColumns");
+
+            // Add the new encodedColumns key with the List<String> value
+            jsonObject.put("encodedColumns", columnList);
+
+        } catch (JsonParseException e) {
+            // Handle Gson parsing errors
+            e.printStackTrace();
+        } catch (Exception e) {
+            // Handle other exceptions
+            e.printStackTrace();
+        }
     }
 
     public static Double getAccuracyPercentage(Double accuracy){
