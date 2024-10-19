@@ -4,7 +4,7 @@
   <groupId>com.modakdev</groupId>
   <artifactId>mdanalysis-model-module</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <name>mdanalysis-model-module</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -17,7 +17,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>6.1.8</version>
+      <version>6.1.14</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
